@@ -1,0 +1,7 @@
+quitar espacios -> for f in *; do mv "$f" "${f// /_}"; done
+
+quitar comas -> for f in *; do mv "$f" "${f//,/}"; done
+
+hacer un dir y cortar los audios 3 sec (desde principio) -> mkdir 3sec; for x in $(ls --file-type *.wav); do ffmpeg -i $x -ss 00:00:00 -t 3 -acodec copy 3sec/$x; done
+
+inicio y fin para cortar audios -> https://unix.stackexchange.com/questions/182602/trim-audio-file-using-start-and-stop-times
